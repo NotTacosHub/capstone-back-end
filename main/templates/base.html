@@ -1,0 +1,19 @@
+{% load cms_tags sekizai_tags %}
+{% load static %}
+{% load sass_tags %}
+<html>
+
+<head>
+    <title>{% page_attribute "page_title" %}</title>
+    {% render_block "css" %}
+
+    <link rel="stylesheet" type="text/css" href="{% sass_src 'css/main.scss' %}">
+</head>
+
+<body>
+    {% cms_toolbar %}
+    {% placeholder "content" %}
+    {% render_block "js" %}
+</body>
+
+</html>
